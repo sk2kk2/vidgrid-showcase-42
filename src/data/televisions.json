@@ -1,0 +1,108 @@
+{
+  "televisions": [
+    {
+      "id": "tv1",
+      "numero": 1,
+      "videos": [],
+      "caption": "Televisor Principal",
+      "backendUrl": "http://localhost:3000",
+      "cidade": "Salvador",
+      "estado": "Bahia",
+      "coordenadas": {
+        "lat": -12.9714,
+        "lng": -38.5014
+      }
+    },
+    {
+      "id": "tv2", 
+      "numero": 2,
+      "videos": [],
+      "caption": "Televisor Secundário",
+      "backendUrl": "http://192.168.1.101:3000",
+      "cidade": "Feira de Santana",
+      "estado": "Bahia",
+      "coordenadas": {
+        "lat": -12.2662,
+        "lng": -38.9667
+      }
+    },
+    {
+      "id": "tv3",
+      "numero": 3,
+      "videos": [],
+      "caption": "Televisor de Teste", 
+      "backendUrl": "http://192.168.1.102:3000",
+      "cidade": "Vitória da Conquista",
+      "estado": "Bahia",
+      "coordenadas": {
+        "lat": -14.8615,
+        "lng": -40.8442
+      }
+    },
+    {
+      "id": "tv4",
+      "numero": 4,
+      "videos": [],
+      "caption": "Televisor Camaçari",
+      "backendUrl": "http://192.168.1.103:3000",
+      "cidade": "Camaçari",
+      "estado": "Bahia",
+      "coordenadas": {
+        "lat": -12.6997,
+        "lng": -38.3243
+      }
+    },
+    {
+      "id": "tv5",
+      "numero": 5,
+      "videos": [],
+      "caption": "Televisor Ilhéus",
+      "backendUrl": "http://192.168.1.104:3000",
+      "cidade": "Ilhéus",
+      "estado": "Bahia",
+      "coordenadas": {
+        "lat": -14.7880,
+        "lng": -39.0334
+      }
+    },
+    {
+      "id": "tv6",
+      "numero": 6,
+      "videos": [],
+      "caption": "Televisor Juazeiro",
+      "backendUrl": "http://192.168.1.105:3000",
+      "cidade": "Juazeiro",
+      "estado": "Bahia",
+      "coordenadas": {
+        "lat": -9.4187,
+        "lng": -40.4986
+      }
+    },
+    {
+      "id": "tv7",
+      "numero": 7,
+      "videos": [],
+      "caption": "Televisor Itabuna",
+      "backendUrl": "http://192.168.1.106:3000",
+      "cidade": "Itabuna",
+      "estado": "Bahia",
+      "coordenadas": {
+        "lat": -14.7880,
+        "lng": -39.2806
+      }
+    },
+    {
+      "id": "tv8",
+      "numero": 8,
+      "videos": [],
+      "caption": "Televisor Lauro de Freitas",
+      "backendUrl": "http://192.168.1.107:3000",
+      "cidade": "Lauro de Freitas",
+      "estado": "Bahia",
+      "coordenadas": {
+        "lat": -12.8944,
+        "lng": -38.3225
+      }
+    }
+  ]
+}
