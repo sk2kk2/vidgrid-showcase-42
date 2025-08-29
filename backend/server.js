@@ -63,7 +63,9 @@ app.post('/upload', upload.single('video'), (req, res) => {
       return res.status(400).json({ error: 'Nenhum arquivo foi enviado' });
     }
 
-    const videoUrl = `http://localhost:${PORT}/videos/${req.file.filename}`;
+    // Usar URL dinâmica baseada no request
+    const baseUrl = `${req.protocol}://${req.get('host')}`;
+    const videoUrl = `${baseUrl}/videos/${req.file.filename}`;
     
     // Extrair prazo de validade do body da requisição
     const { prazoValidade } = req.body;
@@ -146,6 +148,7 @@ app.get('/status', (req, res) => {
 app.get('/check', (req, res) => {
   try {
     const videos = [];
+    const baseUrl = `${req.protocol}://${req.get('host')}`;
     
     // Verificar todos os arquivos de vídeo possíveis
     for (let i = 1; i <= 100; i++) {
@@ -156,8 +159,8 @@ app.get('/check', (req, res) => {
         const stats = fs.statSync(videoPath);
         videos.push({
           filename,
-          url: `http://localhost:${PORT}/videos/${filename}`,
-          downloadUrl: `http://localhost:${PORT}/download/${filename}`,
+          url: `${baseUrl}/videos/${filename}`,
+          downloadUrl: `${baseUrl}/download/${filename}`,
           size: stats.size,
           created: stats.birthtime
         });
@@ -250,6 +253,7 @@ app.get('/download/:filename', (req, res) => {
 app.get('/list', (req, res) => {
   try {
     const videos = [];
+    const baseUrl = `${req.protocol}://${req.get('host')}`;
     
     // Verificar todos os arquivos de vídeo possíveis
     for (let i = 1; i <= 100; i++) {
@@ -263,10 +267,10 @@ app.get('/list', (req, res) => {
         
         videos.push({
           filename,
-          url: `http://localhost:${PORT}/videos/${filename}`,
-          downloadUrl: `http://localhost:${PORT}/download/${filename}`,
+          url: `${baseUrl}/videos/${filename}`,
+          downloadUrl: `${baseUrl}/download/${filename}`,
           xmlFile: xmlFilename,
-          xmlUrl: fs.existsSync(xmlPath) ? `http://localhost:${PORT}/xml/${xmlFilename}` : null,
+          xmlUrl: fs.existsSync(xmlPath) ? `${baseUrl}/xml/${xmlFilename}` : null,
           size: stats.size,
           created: stats.birthtime
         });
@@ -360,7 +364,7 @@ app.post('/update-validity', (req, res) => {
       filename,
       xmlFile: xmlFilename,
       prazoValidade: novoPrazo,
-      xmlUrl: `http://localhost:${PORT}/xml/${xmlFilename}`
+      xmlUrl: `${req.protocol}://${req.get('host')}/xml/${xmlFilename}`
     });
   } catch (error) {
     console.error('Erro ao atualizar validade:', error);
